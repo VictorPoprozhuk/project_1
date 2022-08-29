@@ -1,28 +1,28 @@
 <template>
     <div class="navbar">
-        <h2 @click="$router.push('/')">Vue - 3</h2>
+        <h2 @click="$router.push('/vue/')">Vue - 3</h2>
         <div class="links">
             <my-button
                 class="link"
-                @click="$router.push('/posts')"
+                @click="$router.push('/vue/posts')"
                 style="color: black; border-radius: 10px"
                 >Posts</my-button
             >
             <my-button
                 class="link"
-                @click="$router.push('/about')"
+                @click="$router.push('/vue/about')"
                 style="color: black; border-radius: 10px"
                 >About</my-button
             >
             <my-button
                 class="link"
-                @click="$router.push('/store')"
+                @click="$router.push('/vue/store')"
                 style="color: black; border-radius: 10px"
                 >Store</my-button
             >
             <my-button
                 class="link"
-                @click="$router.push('/calc')"
+                @click="$router.push('/vue/calc')"
                 style="color: black; border-radius: 10px"
                 >API</my-button
             >

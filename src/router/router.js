@@ -8,32 +8,32 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
    {
-      path: '/',
+      path: '/vue/',
       component: Main
 
    },
    {
-      path: '/posts',
+      path: '/vue/posts',
       component: PostPage
 
    },
    {
-      path: '/posts/:id',
+      path: '/vue/posts/:id',
       component: PostID
 
    },
    {
-      path: '/about',
+      path: '/vue/about',
       component: About
 
    },
    {
-      path: '/store',
+      path: '/vue/store',
       component: PostPageWithStoreVue
 
    },
    {
-      path: '/calc',
+      path: '/vue/calc',
       component: Calc
 
    },
