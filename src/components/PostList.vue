@@ -1,5 +1,5 @@
 <template>
-    <div v-if="posts.length > 0">
+    <div class="list-posts" v-if="posts.length > 0">
         <h3>List users</h3>
         <transition-group name="post">
             <post-item
@@ -32,6 +32,14 @@ export default {
 </script>
 
 <style scoped>
+.list-posts {
+    width: 70%;
+}
+@media (max-width: 1000px) {
+    .list-posts {
+        width: 100%;
+    }
+}
 .post-enter-active,
 .post-leave-active {
     transition: all 0.6s ease;

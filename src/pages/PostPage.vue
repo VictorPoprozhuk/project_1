@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <h1>Page with posts</h1>
         <div class="app__btns">
             <my-button @click="showDialog">Create post</my-button>
@@ -131,10 +131,6 @@ export default {
         changeSortRevers() {
             this.reverseSort = !this.reverseSort;
         },
-        // changePage(page) {
-        //     console.log(page);
-        //     this.page = page;
-        // },
     },
     mounted() {
         this.fetchPosts();
@@ -145,33 +141,55 @@ export default {
                 return [...this.posts].sort((post1, post2) =>
                     post1.id > post2.id ? 1 : -1
                 );
-            } else
+            } else {
                 return [...this.posts].sort((post1, post2) =>
                     post1[this.selectedSort]?.localeCompare(
                         post2[this.selectedSort]
                     )
                 );
+            }
         },
         inputSearch() {
+            if (this.reverseSort) {
+                const arr = this.sortPosts.reverse();
+                console.log(1);
+
+                return arr.filter((post) =>
+                    post.title
+                        .toLowerCase()
+                        .includes(this.searchInput.toLowerCase())
+                );
+            }
+            console.log(2);
+
             return this.sortPosts.filter((post) =>
-                post.title.includes(this.searchInput)
+                post.title
+                    .toLowerCase()
+                    .includes(this.searchInput.toLowerCase())
             );
         },
     },
     watch: {
-        // page() {
-        //     this.fetchPosts();
+        // reverseSort() {
+        //     console.log(1);
+        //     this.inputSearch;
         // },
     },
 };
 </script>
 
-<style>
+<style scoped>
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .app__btns {
     margin: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 .checkbox {
     width: 30px;

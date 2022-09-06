@@ -1,20 +1,21 @@
 <template>
-  <button class="btn">
-    <slot></slot>
-  </button>
+    <button class="btn">
+        <slot></slot>
+    </button>
 </template>
 <script>
 export default {
-  name: "my-button",
+    name: "my-button",
 };
 </script>
 
 <style>
 .btn {
-  padding: 10px 15px;
-  background: none;
-  color: teal;
-  border: 1px solid teal;
-  cursor: pointer;
+    padding: 10px 15px;
+    background: none;
+    color: teal;
+    border: 1px solid teal;
+    cursor: pointer;
+    border-radius: 10px;
 }
 </style>

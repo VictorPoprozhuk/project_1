@@ -1,7 +1,7 @@
 <template>
     <navbar />
     <div class="app">
-        <router-view> </router-view>
+        <router-view></router-view>
     </div>
 </template>
 <script>
@@ -22,6 +22,11 @@ export default {
 .app {
     margin: 30px;
     text-align: center;
+}
+@media (max-width: 700px) {
+    .app {
+        margin: 5px;
+    }
 }
 a:visited {
     all: unset;

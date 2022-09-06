@@ -43,7 +43,7 @@ export default {
     },
     methods: {
         input(char) {
-            if (this.result === "Іди нахуй") {
+            if (this.result === "Error") {
                 this.result = "";
             }
             this.result = this.result.toString();
@@ -57,12 +57,8 @@ export default {
         calc() {
             try {
                 let input = this.result.split("");
-                if (
-                    input[input.length - 1] === "-" ||
-                    input[input.length - 1] === "/" ||
-                    input[input.length - 1] === "*" ||
-                    input[input.length - 1] === "+"
-                ) {
+                const operators = ["-", "/", "*", "+"];
+                if (operators.includes(input[input.length - 1])) {
                     input.splice(input.length - 1);
                     return (this.result = eval(input.join("")));
                 }
@@ -72,7 +68,7 @@ export default {
                     ));
                 } else this.result = eval(this.result);
             } catch (e) {
-                this.result = "Іди нахуй";
+                this.result = "Error";
             }
         },
     },
@@ -80,7 +76,7 @@ export default {
 </script>
 <style scoped>
 .page {
-    height: 500px;
+    height: 600px;
     width: 100%;
 }
 .calc {
@@ -90,6 +86,8 @@ export default {
     transform: translate(-50%, -50%);
     width: 300px;
     background: black;
+    border-radius: 20px;
+    z-index: 1;
 }
 input {
     margin: 50px 0 20px;

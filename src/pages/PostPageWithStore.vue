@@ -66,6 +66,7 @@ export default {
             setSearchInput: "post/setSearchInput",
             setSelectedSort: "post/setSelectedSort",
             setSortReverse: "post/setSortReverse",
+            setPosts: "post/setPosts",
         }),
 
         createPost(post) {
@@ -73,7 +74,7 @@ export default {
             this.dialogVisible = false;
         },
         removePost(post) {
-            this.posts = this.posts.filter((p) => p.id !== post.id);
+           this.setPosts(this.posts.filter((p) => p.id !== post.id))
         },
         showDialog() {
             this.dialogVisible = true;
